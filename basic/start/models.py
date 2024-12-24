@@ -32,4 +32,16 @@ class Laptop(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
-        return f"{self.brand} {self.model_name} {self.processor}  {self.ram_size} {self.storage_capacity}  {self.screen_size} {self.price})"
+        return f"{self.brand} {self.model_name} {self.processor}  {self.ram_size} {self.storage_capacity}  {self.screen_size} {self.price}"
+    
+
+class Teacher(models.Model):
+    name = models.CharField( max_length=100)
+    age = models.PositiveBigIntegerField()
+    qualification = models.CharField(max_length=100)
+    gender = models.CharField(max_length=50) 
+    salary = models.DecimalField(max_digits=5, decimal_places=2)
+    exprience = models.PositiveBigIntegerField()
+
+    def __str__(self):
+        return f"{self.name}  {self.age} {self.qualification} {self.gender} {self.salary} {self.exprience}"  

@@ -1,0 +1,11 @@
+<h1>College List</h1>
+<a href="{% url 'college_create' %}">Add College</a>
+<ul>
+    {% for college in colleges %}
+    <li>
+        {{ college.name }} - {{ college.location }} - {{ college.contact_email }} - {{ college.total_student }} students
+        <a href="{% url 'college_update' college.id %}">Edit</a>
+        <a href="{% url 'college_delete' college.id %}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>

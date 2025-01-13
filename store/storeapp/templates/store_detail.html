@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ store.name }}</title>
+</head>
+<body>
+    <h1>{{ store.name }}</h1>
+    <p><strong>Location:</strong> {{ store.location }}</p>
+    <p><strong>Contact Email:</strong> {{ store.contact_email }}</p>
+    <p><strong>Total Products:</strong> {{ store.total_products }}</p>
+    <a href="{% url 'store-update' store.id %}">Edit</a>
+    <a href="{% url 'store-list' %}">Back to List</a>
+</body>
+</html>

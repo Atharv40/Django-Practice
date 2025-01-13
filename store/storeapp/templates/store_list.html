@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Store List</title>
+</head>
+<body>
+    <h1>Store List</h1>
+    <a href="{% url 'store-create' %}">Add New Store</a>
+    <ul>
+        {% for store in stores %}
+            <li>
+                <a href="{% url 'store-detail' store.id %}">{{ store.name }}</a>
+                <a href="{% url 'store-update' store.id %}">Edit</a>
+                <form action="{% url 'store-delete' store.id %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

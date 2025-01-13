@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ form.instance.pk|default:"Create" }} Administrative Staff</title>
+</head>
+<body>
+    <h1>{{ form.instance.pk|default:"Create" }} Administrative Staff</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'administrative_list' %}">Back to Staff List</a>
+</body>
+</html>

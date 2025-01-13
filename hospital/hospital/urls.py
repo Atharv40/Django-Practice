@@ -1,5 +1,5 @@
 """
-URL configuration for college project.
+URL configuration for hospital project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -16,12 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
-from collegeapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app/', include('collegeapp.urls')),
+    path('hospital/', include('hospital.urls')),
+    path('doctor/', include('doctor.urls')),
+    path('patient/', include('patient.urls')),
+    path('administrative/', include('administrative.urls')),
+]
 
     
-    
-]
+

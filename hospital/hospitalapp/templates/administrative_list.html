@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administrative Staff List</title>
+</head>
+<body>
+    <h1>Administrative Staff List</h1>
+    <a href="{% url 'administrative_create' %}">Add New Staff</a>
+    <ul>
+        {% for admin in administratives %}
+        <li>
+            {{ admin.name }} - {{ admin.role }}
+            <a href="{% url 'administrative_update' admin.id %}">Edit</a>
+            <a href="{% url 'administrative_delete' admin.id %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

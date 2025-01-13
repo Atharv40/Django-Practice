@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Administrative Staff</title>
+</head>
+<body>
+    <h1>Delete Administrative Staff</h1>
+    <p>Are you sure you want to delete {{ administrative.name }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+    </form>
+    <a href="{% url 'administrative_list' %}">Cancel</a>
+</body>
+</html>

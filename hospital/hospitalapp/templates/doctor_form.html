@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ form.instance.pk|default:"Create" }} Doctor</title>
+</head>
+<body>
+    <h1>{{ form.instance.pk|default:"Create" }} Doctor</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'doctor_list' %}">Back to Doctor List</a>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospitals</title>
+</head>
+<body>
+    <h1>Hospital List</h1>
+    <a href="{% url 'hospital_create' %}">Add Hospital</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Contact Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for hospital in hospitals %}
+            <tr>
+                <td>{{ hospital.name }}</td>
+                <td>{{ hospital.location }}</td>
+                <td>{{ hospital.contact_email }}</td>
+                <td>
+                    <a href="{% url 'hospital_update' hospital.id %}">Edit</a>
+                    <a href="{% url 'hospital_delete' hospital.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
